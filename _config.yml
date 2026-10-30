@@ -1,0 +1,3 @@
+# O GitHub Pages ignora este README no site publicado.
+exclude:
+  - README.md

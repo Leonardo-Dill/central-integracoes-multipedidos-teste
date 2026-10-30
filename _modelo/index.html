@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no">
+<title>Integração Nome | Multipedidos</title>
+<meta name="description" content="Passo a passo da integração.">
+<meta name="theme-color" content="#fff9f5">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="preload" href="../assets/fonts/lato-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/lato-900.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/hub.css">
+<script>document.documentElement.classList.add('js')</script>
+<script src="../assets/hub.js" defer></script>
+</head>
+<body>
+<div class="wrap">
+<nav class="topbar" aria-label="Navegação"><a class="back" href="../"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg> Hub de integrações</a><a class="brand" href="../"><img src="../assets/logo-multipedidos.svg" alt="Multipedidos" width="128" height="20"></a></nav>
+<!-- 1) CABEÇALHO: troque o rótulo, o título e o texto de apoio.
+     O ícone fica dentro de <div class="badge">. Há outros ícones nas outras páginas para copiar. -->
+<header class="hero">
+  <div class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg></div>
+  <div>
+    <p class="eyebrow">Passo a passo</p>
+    <h1>Integração <span class="hl">Nome da integração</span></h1>
+    <p class="lede">Abra cada etapa conforme for avançando. Clique em qualquer imagem para ampliar.</p>
+  </div>
+</header>
+
+<!-- 2) BUSCA DA PÁGINA: funciona sozinha, não precisa mexer. -->
+<section class="finder js-only" id="busca" aria-labelledby="finder-title">
+  <h2 class="finder-title" id="finder-title">Buscar nesta integração</h2>
+  <form class="js-only search-form" role="search" action="#" autocomplete="off">
+    <label class="sr" for="q">Buscar nesta integração</label>
+    <div class="field"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+      <input type="search" id="q" name="q" placeholder="Ex.: uma palavra do passo a passo" enterkeyhint="search" autocapitalize="off" autocorrect="off" spellcheck="false" aria-controls="res-list" aria-describedby="res-status">
+      <button type="button" class="clear" id="clearQ" aria-label="Limpar busca" hidden>×</button>
+    </div>
+    <div class="results" id="results" hidden><p class="res-status" id="res-status" aria-live="polite"></p><ul class="res-list" id="res-list"></ul></div>
+  </form>
+</section>
+<div class="toolbar"><form method="get"><button type="submit" id="collapseAll">Recolher tudo</button></form></div>
+
+<!-- 3) SEÇÕES. Cada seção é um bloco <details class="acc section">.
+     Regras para os links diretos funcionarem:
+     - todo id é único na página, em minúsculas, sem espaço e sem acento;
+     - seção: id="loja"; passo: id="loja-1"; subpasso: id="loja-1-1".
+     Para criar outra seção, copie do <details class="acc section"> até o </details> correspondente. -->
+<details class="acc section" id="loja" open>
+  <summary class="acc-head"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1.2 12.1a1 1 0 0 1-1 .9H7.2a1 1 0 0 1-1-.9L5 8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg></span><span class="acc-title">Título da seção</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+  <div class="acc-body"><div class="acc-inner">
+    <p class="intro">Uma frase explicando o objetivo desta seção.</p>
+
+    <!-- PASSO: copie do <details class="acc step"> até o </details> -->
+    <details class="acc step" id="loja-1">
+      <summary class="acc-head"><span class="num">1</span><span class="acc-title">Título do passo</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+      <div class="acc-body"><div class="acc-inner">
+        <p>Texto do passo. Use <strong>negrito</strong> para o nome de botões e telas.</p>
+
+        <!-- CAMINHO DE MENUS -->
+        <div class="path"><span>Sistema</span><i>→</i><span>Integrações</span></div>
+
+        <!-- IMAGEM: salve em img/ como .webp (nome em minúsculas, ex.: loja-1.webp).
+             Ajuste width e height para o tamanho real da imagem. -->
+        <figure><a class="zoom" href="img/loja-1.webp"><img src="img/loja-1.webp" alt="Descreva o que aparece na imagem" width="1400" height="700" loading="lazy" decoding="async"></a><figcaption>Legenda opcional.</figcaption></figure>
+
+        <!-- DESTAQUE AMARELO (troque class="note" por class="note warn" para laranja) -->
+        <div class="note"><strong>Importante</strong>Texto do destaque.</div>
+
+        <!-- SUBPASSOS (opcional) -->
+        <div class="subs">
+          <details class="acc sub" id="loja-1-1">
+            <summary class="acc-head"><span class="num">1.1</span><span class="acc-title">Título do subpasso</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+            <div class="acc-body"><div class="acc-inner">
+              <p>Texto do subpasso.</p>
+            </div></div>
+          </details>
+        </div>
+      </div></div>
+    </details>
+
+    <!-- ÚLTIMO PASSO: contato do suporte -->
+    <details class="acc step" id="loja-2">
+      <summary class="acc-head"><span class="num">2</span><span class="acc-title">Etapa do suporte</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+      <div class="acc-body"><div class="acc-inner">
+        <p>Chame o suporte da Multipedidos para concluir a integração.</p>
+        <div class="done-card"><div><div class="fine" style="margin:0">Suporte Multipedidos</div><a href="tel:+5547999548215">(47) 99954-8215</a></div></div>
+      </div></div>
+    </details>
+  </div></div>
+</details>
+
+<!-- 4) Depois de pronta, adicione o card desta integração na página inicial (index.html na raiz). -->
+<footer>Multipedidos · Suporte <a href="https://wa.me/554799548215" target="_blank" rel="noopener">(47) 99954-8215</a></footer>
+<a class="to-search js-only" id="toSearch" href="#busca" aria-label="Voltar para a busca" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></a>
+</div>
+</body>
+</html>
